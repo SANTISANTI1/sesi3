@@ -1,4 +1,4 @@
-
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -6,52 +6,44 @@
     font-family: Arial, sans-serif;
 }
 
-/* Body */
 body {
-    background-color: #f4f4f4;
+    text-align: center;
+    background-color: #f8f9fa;
 }
 
 /* Navbar */
 .navbar {
-    background-color: #28a745; /* Warna hijau */
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #28a745 !important;
 }
 
-.navbar .logo {
-    font-weight: bold;
-    font-size: 20px;
-    color: white; /* Warna teks putih */
-}
-
-.navbar .nav-links a {
-    text-decoration: none;
-    color: white; /* Warna teks putih */
-    margin: 0 15px;
+.navbar .navbar-brand,
+.navbar-nav .nav-link {
+    color: white !important;
     font-weight: bold;
 }
 
-/* Hover efek */
-.navbar .nav-links a:hover {
-    color: #d4edda; /* Warna hijau muda saat hover */
+.navbar-nav .nav-link:hover {
+    color: #d4edda !important;
 }
-
 
 /* Header */
-.header {
+header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 50px;
+    justify-content: space-between; /* Memisahkan teks dan gambar */
+    flex-wrap: wrap;
+    height: 100vh;
+    padding: 60px 20px;
     background-color: #fff;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
 }
 
 .header-text {
     width: 50%;
-    max-width: 500px;
+    text-align: left;
+    padding-right: 20px;
 }
 
 .header-text h1 {
@@ -60,87 +52,83 @@ body {
 }
 
 .header-text p {
-    color: #555;
+    font-size: 16px;
+    color: #6c757d;
     margin-bottom: 15px;
 }
 
 .header-text .btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #28a745;
+    background-color: #007bff;
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    margin-top: 10px;
 }
 
 .header-text .btn:hover {
     background-color: #0056b3;
 }
 
+.header-content {
+    flex: 1;
+    text-align: left;
+}
+
 .header-image {
     width: 50%;
-    text-align: center;
+    text-align: right; /* Menempatkan gambar ke kanan */
 }
 
 .header-image img {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 10px;
+    flex: 1;
+    max-width: 250px;
+    border-radius: 50%;
+    float: right;
 }
 
-/* About Me */
-.about {
-    text-align: center;
-    padding: 40px;
-    background-color: #fff;
-    margin: 20px;
+/* About Me Section */
+#about {
+    padding: 50px 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
 }
 
-.about-grid {
+.about-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
     padding: 20px;
 }
 
-.about h2 {
-    margin-bottom: 10px; /* Atur jarak sesuai keinginan */
+.about-item {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+    font-size: 18px;
 }
 
-.about p {
-    margin-top: 10px; /* Atur jarak sesuai keinginan */
+.about-item i {
+    color: orange;
+    font-size: 24px;
 }
 
-.about-grid div {
-    background: #ddd;
-    padding: 15px;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-.about-grid div span.label {
-    color: #28a745; /* Warna biru untuk label sebelum ":" */
-    font-weight: bold;
-}
-
-.about-grid div span.value {
-    color: black; /* Warna hitam untuk teks setelah ":" */
-}
-
-/* Portfolio */
-.portfolio {
-    text-align: center;
-    padding: 40px;
+/* Portfolio Section */
+#portfolio {
+    padding: 50px 20px;
     background-color: #fff;
-    margin: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1000px;
 }
 
-.portfolio h2 {
+#portfolio h2 {
+    font-size: 2rem;
     margin-bottom: 20px;
 }
 
@@ -152,15 +140,15 @@ body {
     gap: 20px;
 }
 
-/* Item */
+/* Portfolio Item */
 .portfolio-item {
-    flex: 1 1 300px;
-    max-width: 30%;
-    background: #ddd;
-    padding: 20px;
+    width: 300px;
+    background: #fff;
+    padding: 15px;
     text-align: center;
     border-radius: 10px;
     transition: transform 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .portfolio-item:hover {
@@ -170,25 +158,106 @@ body {
 /* Gambar */
 .portfolio-item img {
     width: 100%;
-    height: auto;
+    height: 200px;
+    object-fit: cover;
     border-radius: 10px;
 }
 
-/* Media Query untuk layar kecil */
+/* Tombol */
+.portfolio-item .btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.portfolio-item .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Projects Section */
+#projects {
+    padding: 50px 20px;
+}
+
+/* Card */
+.card img {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px; /* Atur tinggi yang sama */
+    object-fit: cover; /* Memastikan gambar tidak terdistorsi */
+}
+
+.container {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.row {
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.col-md-6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header .row {
+    gap: 20px; /* Atur jarak antar elemen */
+}
+
+
+/* Modals */
+.modal-content {
+    padding: 20px;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    .header {
+    header {
         flex-direction: column;
         text-align: center;
         padding: 30px;
     }
 
-    .header-text,
-    .header-image {
+    .header-text {
         width: 100%;
+        text-align: center;
+        padding-right: 0;
     }
 
-    .about-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .header-image {
+        width: 100%;
+        text-align: center;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+
+    .header-image img {
+        max-width: 200px;
+    }
+
+    img {
+        max-width: 100%; /* Pastikan gambar tidak melebihi lebar layar */
+        height: auto; /* Biarkan tinggi menyesuaikan */
     }
 
     .portfolio-grid {
@@ -198,13 +267,20 @@ body {
 
     .portfolio-item {
         width: 80%;
-        margin-bottom: 20px;
+    }
+
+    .card img {
+        height: 150px;
     }
 }
 
 @media (max-width: 480px) {
-    .about-grid {
-        grid-template-columns: repeat(1, 1fr);
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .header-image img {
+        max-width: 150px;
     }
 
     .portfolio-item {
